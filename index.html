@@ -7,28 +7,31 @@
     <link rel="stylesheet" href="css/styles.css">
     <!-- Include Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 <body>
     <header class="floating-header">
         <div class="header-title">Animentree</div>
         <nav class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
+            <a href="index.html" aria-label="Home">Home</a>
+            <a href="about.html" aria-label="About">About</a>
+            <a href="blog.html" aria-label="Blog">Blog</a>
+            <a href="explore.html" aria-label="Explore">Explore</a>
         </nav>
-        <button class="login-btn" onclick="toggleLogin()">
+        <button class="login-btn" onclick="toggleLogin()" aria-label="Open Login Modal">
             <i class="fas fa-user"></i> Login
         </button>
     </header>
     
-    <div class="login-modal" id="loginModal">
-        <div class="login-content">
-            <span class="close" onclick="toggleLogin()">&times;</span>
-            <h2>Login</h2>
+    <!-- Login Modal -->
+    <div class="login-modal" id="loginModal" aria-hidden="true">
+        <div class="login-content" role="dialog" aria-labelledby="loginTitle">
+            <button class="close" onclick="toggleLogin()" aria-label="Close Login Modal">&times;</button>
+            <h2 id="loginTitle">Login</h2>
             <form>
-                <input type="text" placeholder="Username" required>
-                <input type="password" placeholder="Password" required>
+                <input type="text" placeholder="Username" aria-label="Username" required>
+                <input type="password" placeholder="Password" aria-label="Password" required>
                 <button type="submit">Login</button>
             </form>
         </div>
@@ -36,5 +39,103 @@
 
     <script src="js/script.js"></script>
 </body>
+</html>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to Animentree</h1>
+        <p>Discover, explore, and immerse yourself in a world of adventure. Your journey begins here!</p>
+        <button class="cta-btn" onclick="window.location.href='explore.html'">Get Started</button>
+    </div>
+</section>
+
+<section class="blog-panel" id="blogPanel">
+    <h2>Latest Blogs</h2>
+    <div class="blog-list" id="blogList"></div>
+    <div class="pagination">
+        <button onclick="changePage(1)" id="page1">1</button>
+        <button onclick="changePage(2)" id="page2">2</button>
+        <button onclick="changePage(3)" id="page3">3</button>
+        <button onclick="changePage(4)" id="page3">4</button>
+        <button herf="blog.html" id="page3">more</button>
+    </div>
+</section>
+
+<section class="join-now">
+    <div class="join-content">
+        <h2>Join Now for Exclusive Perks!</h2>
+        <p>Unlock a world of anime content, exclusive blogs, quizzes, and more. Become a member today to enjoy:</p>
+        <ul class="perk-list">
+            <li>Early Access to Latest Blogs and Reviews</li>
+            <li>Personalized Anime Recommendations</li>
+            <li>Exclusive Quizzes and Challenges</li>
+            <li>Monthly Giveaway Entries</li>
+            <li>Priority Support and Community Access</li>
+        </ul>
+        <button class="join-btn">Join Now</button>
+    </div>
+</section>
+<section class="socials-section">
+    <h2>Follow Us</h2>
+    <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.youtube.com" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.pinterest.com" target="_blank" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
+        <a href="https://www.tiktok.com" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.reddit.com" target="_blank" class="social-icon"><i class="fab fa-reddit"></i></a>
+        <a href="https://www.snapchat.com" target="_blank" class="social-icon"><i class="fab fa-snapchat-ghost"></i></a>
+        <a href="https://www.tumblr.com" target="_blank" class="social-icon"><i class="fab fa-tumblr"></i></a>
+    </div>
+</section>
 
 
+<script src="js/blog.js"></script>
+
+<section class="trailers-panel" id="trailersPanel">
+    <h2>Latest Anime Trailers</h2>
+    <div class="trailers-list" id="trailersList"></div>
+</section>
+
+<script src="js/trailers.js"></script>
+
+
+<section class="contact-section">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <input type="text" id="subject" placeholder="Subject" required>
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+    <div id="formResponse" class="form-response"></div>
+</section>
+
+
+
+
+
+<footer class="footer-section">
+    <div class="footer-content">
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="explore.html">Explore</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-socials">
+            <a href="https://www.facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 YourWebsiteName. All rights reserved.</p>
+    </div>
+</footer>
